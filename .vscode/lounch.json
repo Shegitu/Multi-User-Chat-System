@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Run ChatApp (JavaFX)",
+      "request": "launch",
+      "mainClass": "com.chat.gui.ChatApp",
+      "vmArgs": "--module-path C:/Users/HP/Desktop/fx1/javafx-sdk-17.0.17/lib --add-modules javafx.controls,javafx.fxml"
+    }
+  ]
+}

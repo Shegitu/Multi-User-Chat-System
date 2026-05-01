@@ -6,30 +6,19 @@ import java.util.ArrayList;
 
 public class ChatServer {
 
-    // 🔥 shared list of all connected clients
     public static ArrayList<ClientHandler> clients = new ArrayList<>();
 
     public static void main(String[] args) {
-
         try {
-            ServerSocket server = new ServerSocket(5000);
-
-            System.out.println("Server started...");
-            System.out.println("Waiting for clients...");
+            ServerSocket serverSocket = new ServerSocket(5000);
 
             while (true) {
+                Socket socket = serverSocket.accept();
 
-                Socket socket = server.accept();
-                System.out.println("Client connected: " + socket.getInetAddress());
+                ClientHandler client = new ClientHandler(socket);
+                clients.add(client);
 
-                // create handler
-                ClientHandler handler = new ClientHandler(socket);
-
-                // 🔥 add client to list
-                clients.add(handler);
-
-                // start thread
-                new Thread(handler).start();
+                new Thread(client).start();
             }
 
         } catch (Exception e) {

@@ -1,7 +1,7 @@
 {
-    "java.project.sourcePaths": ["src"],
-    "java.project.outputPath": "bin",
-    "java.project.referencedLibraries": [
-        "lib/**/*.jar"
-    ]
+  "java.project.sourcePaths": ["src"],
+  "java.project.outputPath": "bin",
+  "java.project.referencedLibraries": [
+    "C:/Users/HP/Desktop/fx1/javafx-sdk-17.0.17/lib/*.jar"
+  ]
 }
